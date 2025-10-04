@@ -1,0 +1,478 @@
+:root {
+    --color-text-primary: #333;
+    --color-text-secondary: #666;
+    --color-bg: #fff;
+    --color-border: rgba(0, 0, 0, 0.08);
+    --radius: 5px;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    font-size: .9rem;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg);
+}
+
+/* Container - limits maximum width and centers content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header and Navigation */
+/* Fixed header that stays at the top when scrolling */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Navigation container - uses Flexbox to center items vertically */
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Vladyslav Averin */
+.nav-header h1 {
+    font-size: 1.2rem;
+}
+
+/* Software Engineer */
+.nav-header p {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+/* Navigation menu - uses Flexbox to arrange links horizontally */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Individual navigation links */
+.nav-link {
+    display: block;
+    padding: 0.1rem 1rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Navigation link hover and active states */
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-text-primary);
+}
+
+/* Main section - adds padding to prevent content from hiding under fixed header */
+.section {
+    padding-top: 115px;
+}
+
+/* Section title styling */
+.section-title {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 300;
+}
+
+/* About Me Section */
+/* About content - uses Grid for layout */
+.about-content {
+    display: grid;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Text paragraphs in About section */
+.about-text p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* Avatar image - circular profile picture */
+.avatar-placeholder {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: 1.3rem;
+    object-fit: cover;
+    display: block;
+}
+
+/* CV Section */
+/* CV grid - organizes CV sections vertically */
+.cv-grid {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* CV section headings with bottom border */
+.cv-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--color-text-primary);
+    padding-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+/* Individual CV items - styled cards with borders and shadows */
+.cv-item {
+    padding: 1.5rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+}
+
+/* CV item titles */
+.cv-item h4 {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+/* Add margin to last CV section */
+.cv-section:last-child .cv-item {
+    margin-bottom: 1.2rem;
+}
+
+/* Institution name styling */
+.institution {
+    margin-bottom: 0.3rem;
+}
+
+/* Time period text */
+.period {
+    color: var(--color-text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+/* Default link color */
+a {
+    color: var(--color-text-primary);
+}
+
+/* Description paragraphs in CV items */
+.description p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.description p:last-child {
+    margin-bottom: 0;
+}
+
+/* Skills grid - uses Grid to create columns on larger screens */
+.skills-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+}
+
+/* Individual skill categories - styled cards */
+.skill-category {
+    background: var(--color-bg);
+    padding: 1.1rem;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+}
+
+/* Skill category headings */
+.skill-category h4 {
+    margin-bottom: .2rem;
+    font-weight: 600;
+}
+
+/* Skill lists with bullet points */
+.skill-category ul {
+    list-style: disc;
+    padding-left: 1.1rem;
+}
+
+/* Individual skill items with bottom border */
+.skill-category li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Remove border from last skill item */
+.skill-category li:last-child {
+    border-bottom: none;
+}
+
+/* Languages grid - uses Grid for layout */
+.languages {
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: 1fr;
+}
+
+/* Language items - uses Flexbox to space content */
+.language-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .8rem 1.5rem;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+}
+
+/* Language proficiency level text */
+.language-level {
+    color: var(--color-text-secondary);
+}
+
+/* Credential Link */
+/* External credential link button */
+.credential-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
+    font-size: 0.8rem;
+    border-radius: var(--radius);
+    margin-top: 1rem;
+}
+
+/* Credential link hover effect - inverts colors */
+.credential-link:hover {
+    color: var(--color-bg);
+    background: var(--color-text-primary);
+    border-color: var(--color-text-primary);
+}
+
+/* Icon size in credential link */
+.credential-link i {
+    font-size: 0.75rem;
+}
+
+/* Portfolio Section */
+/* Introductory text for portfolio */
+.content-intro {
+    text-align: center;
+    margin-bottom: 1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+/* Portfolio grid - uses Grid to arrange project cards */
+.portfolio-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    padding-bottom: 1rem;
+}
+
+/* Project card - styled container with image and content */
+.project-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+/* Project card hover effect - lifts card slightly */
+.project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Project image - fixed height with cover fit */
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Project content container - uses Flexbox */
+.project-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1.5rem;
+}
+
+/* Project title */
+.project-content h3 {
+    font-size: 1rem;
+    margin-bottom: .3rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Project description text */
+.project-content p {
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    text-align: center;
+    flex: 1;
+}
+
+/* Technology tags container - uses Flexbox to wrap tags */
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+}
+
+/* Technologies */
+.tech-tag {
+    background: rgba(126, 126, 126, 0.08);
+    padding: 0.2rem 1rem;
+    font-size: 0.8rem;
+    border-radius: var(--radius);
+}
+
+/* Project links container - uses Flexbox */
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+/* Individual project link button */
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: .5rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
+    font-size: 0.95rem;
+    flex: 1;
+    border-radius: var(--radius);
+}
+
+/* Project link hover effect - inverts colors and lifts button */
+.project-link:hover {
+    color: var(--color-bg);
+    background: var(--color-text-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Contact Section */
+/* Contact content container */
+.contact-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Contact grid - arranges contact items in a grid */
+.contact-grid {
+    display: grid;
+    gap: 1rem .2rem;
+    margin-top: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Individual contact item */
+.contact-item {
+    display: block;
+    text-align: center;
+    padding: .8rem;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+/* Contact icon styling */
+.contact-item i {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s;
+}
+
+/* Contact item heading */
+.contact-item h4 {
+    font-weight: 600;
+    font-size: .8rem;
+}
+
+/* Contact item detail text */
+.contact-item span {
+    color: var(--color-text-secondary);
+    font-size: .8rem;
+}
+
+/* Contact item hover effect - changes text color */
+.contact-item:hover span {
+    color: var(--color-text-primary);
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    /* Skills grid - 3 columns */
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    /* Languages grid - 2 columns */
+    .languages {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* Portfolio grid - 2 columns */
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* Contact grid - 4 columns centered */
+    .contact-grid {
+        grid-template-columns: repeat(4, max-content);
+        justify-content: center;
+        gap: 1rem 1.5rem;
+    }
+}
+
+/* Desktop screens (1024px and up) */
+@media (min-width: 1024px) {
+    /* Portfolio grid - 3 columns */
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
