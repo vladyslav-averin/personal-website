@@ -90,7 +90,7 @@ header {
 }
 
 /* Main section - adds padding to prevent content from hiding under fixed header */
-.section {
+main {
     padding-top: 115px;
 }
 
@@ -105,27 +105,43 @@ header {
 /* About content - uses Grid for layout */
 .about-content {
     display: grid;
-    gap: 2rem;
+    gap: 1rem;
     max-width: 800px;
     margin: 0 auto;
 }
 
 /* Text paragraphs in About section */
 .about-text p {
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     line-height: 1.7;
     text-align: center;
 }
 
+/* Remove bottom margin only from last paragraph */
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
 /* Avatar image - circular profile picture */
 .avatar-placeholder {
-    width: 12rem;
-    height: 12rem;
+    width: 10rem;
+    height: 10rem;
     border-radius: 50%;
     margin: 0 auto;
-    margin-top: 1.3rem;
+    margin-top: .5rem;
     object-fit: cover;
     display: block;
+}
+
+/* Contact section on About Me page */
+.contact-section {
+    text-align: center;
+}
+
+.contact-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 /* CV Section */
@@ -409,8 +425,7 @@ a {
 /* Contact grid - arranges contact items in a grid */
 .contact-grid {
     display: grid;
-    gap: 1rem .2rem;
-    margin-top: 1rem;
+    gap: .2rem .2rem;
     grid-template-columns: repeat(2, 1fr);
 }
 
@@ -418,7 +433,7 @@ a {
 .contact-item {
     display: block;
     text-align: center;
-    padding: .8rem;
+    padding: .5rem;
     transition: var(--transition);
     text-decoration: none;
 }
